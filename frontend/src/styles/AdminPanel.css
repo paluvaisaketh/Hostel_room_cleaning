@@ -1,0 +1,79 @@
+.admin-booking-container {
+  padding: 50px;
+  margin-top: 50px;
+}
+
+.add-user-btn,
+.logout-btn {
+  padding: 10px 20px;
+  background-color: #3fa9a9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.add-user-btn:hover,
+.logout-btn:hover {
+  background-color: #2d7a7a;
+}
+
+.booking-title {
+  font-size: 24px;
+  color: #3fa9a9;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.booking-table th,
+.booking-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #bddcdc;
+}
+
+
+.booking-table th {
+  background-color: #3fa9a9;
+  color: white;
+}
+
+.booking-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.status-dropdown {
+  padding: 7px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  width: 50%;
+  border-radius: 5px;
+  color: #555;
+}
+
+.status-dropdown:focus {
+  outline: none;
+  border-color: #3fa9a9;
+}
+
+.delete-btn {
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}

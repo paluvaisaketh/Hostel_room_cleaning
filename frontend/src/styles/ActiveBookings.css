@@ -1,0 +1,67 @@
+
+.page-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: purple; 
+    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+  
+  .sub-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+ 
+  .booking-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .booking-item {
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+  }
+  
+  .booking-details {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .booking-item strong {
+    color: mediumpurple;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  .delete-button:hover {
+    background-color: #d32f2f;
+  }
+  
+  .delete-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .no-bookings {
+    font-size: 1.2rem;
+    color: #888;
+    text-align: center;
+  }
+  
+  

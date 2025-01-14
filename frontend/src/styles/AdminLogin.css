@@ -1,0 +1,150 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    height: auto;
+}
+
+.mainco1{
+    /* border: 2px red solid; */
+    width: 100%;
+    height: auto;
+    /* background-color: #f4f4f4; */
+    margin-top: 90px;
+}
+
+.login-container1 {
+    /* border: 2px red solid; */
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 84%;
+    margin-left: 100px;
+    margin-top: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container1 .left-container1 {
+    /* border: 2px green solid; */
+    width: 55%;
+    background: url('signup.jpg') no-repeat center center/cover;
+}
+
+.login-container1 .right-container1 {
+    /* border: 2px blue solid; */
+    width: 45%;
+    padding: 10px 45px;
+    background-color: white;
+}
+
+.login-container1 .right-container1 h2 {
+    text-align: center;
+    color: #55a0fd;
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
+
+
+
+.login-container1 .right-container1 h4 a {
+    color: green;
+}
+
+.login-container1 .right-container1 .usernamelabel {
+    display: block;
+    font-weight: bold;
+    color: #55a0fd;
+    margin-top: 4px;
+}
+
+.login-container1 .right-container1 .passwordlabel {
+    display: block;
+    font-weight: bold;
+    color: #55a0fd;
+    margin-top: 4px;
+}
+
+.login-container1 .right-container1 input,
+select {
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 4px;
+    transition: border-color 0.3s;
+    border-radius: 4px;
+}
+
+.login-container1 .right-container1 input:focus {
+    border-color: #5796e3;
+    outline: none;
+    box-shadow: 0 0 5px #4283d2;
+}
+
+.login-container1 .right-container1 .ll {
+    text-align: center;
+}
+.login-container1 .right-container1 .ll button {
+    width: 90px;
+    padding: 9px;
+    background: #55a0fd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 20px;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+
+
+.messagecono1 {
+    
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    color: orange;
+}
+@media(max-width:1000px){
+    .login-container1 .right-container1{
+        width: 60%;
+    }
+}
+@media(max-width:800px){
+    .login-container1{
+        margin-left: 20px;
+        margin-right: 20px;
+        width: auto;
+    }
+}
+@media(max-width:600px){
+    .login-container1 .right-container1{
+        width: 100%;
+        padding: 10px 10px;
+    }
+    .login-container1 .left-container1{
+        display: none;
+    }
+}
+
+.btn{
+    margin-left: 20px;
+    padding: 8px 15px;
+    background-color: #3fa9a9;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.btn a{
+    color: white;
+}
