@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./styles/AdminAdduser.css"
+import "./styles/AdminAdduser.css";
+
 const AdminAddUser = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -10,34 +11,42 @@ const AdminAddUser = () => {
     roomtype: "",
     email: "",
   });
-
+  
+  const [message, setMessage] = useState(null);
+  const [error, setError] = useState(null);
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setMessage(null);
+    setError(null);
+    
     try {
       const res = await axios.post("http://localhost:5500/admin/admin-add-user", formData);
-      alert(res.data.message);
+      setMessage(res.data.message);
     } catch (err) {
-      alert("Error: " + err.response.data.message);
+      setError(err.response?.data?.message || "An error occurred");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Add User</h1>
-      {Object.keys(formData).map((key) => (
-        <div key={key}>
-          <label>{key.toUpperCase()}:</label>
-          <input
-            type="text"
-            value={formData[key]}
-            onChange={(e) =>
-              setFormData({ ...formData, [key]: e.target.value })
-            }
-          />
-        </div>
-      ))}
-      <button type="submit">Add User</button>
-    </form>
+    <div className="admin-add-user-container">
+      <form onSubmit={handleSubmit} className="admin-add-user-form">
+        <h1>Add User</h1>
+        {message && <p className="success-message">{message}</p>}
+        {error && <p className="error-message">{error}</p>}
+        {Object.keys(formData).map((key) => (
+          <div key={key} className="input-group">
+            <label>{key.toUpperCase()}:</label>
+            <input
+              type="text"
+              value={formData[key]}
+              onChange={(e) => setFormData({ ...formData, [key]: e.target.value })}
+            />
+          </div>
+        ))}
+        <button type="submit">Add User</button>
+      </form>
+    </div>
   );
 };
 

@@ -21,8 +21,8 @@ mongoose.connect("mongodb://localhost:27017/HostelCleaning", {
 const transporter = nodemailer.createTransport({
     service: "gmail", 
     auth: {
-        user: "raghavkurumella24@gmail.com", 
-        pass: "rlilelhhxetfjoal", 
+        user: "paluvaibhargavsaketh@gmail.com", 
+        pass: "yddo cads jbhc uamg", 
     },
 });
 
@@ -53,7 +53,7 @@ app.post("/admin/admin-add-user", async (req, res) => {
         await newUser.save();
 
         await transporter.sendMail({
-            from: '"Hostel Cleaning Service" raghavkurumella24@gmail.com', 
+            from: '"Hostel Cleaning Service" paluvaibhargavsaketh@gmail.com', 
             to: email, 
             subject: "Welcome to the Hostel Cleaning Service - Your Account Details", 
             html: `
@@ -85,6 +85,7 @@ app.post("/admin/admin-add-user", async (req, res) => {
         res.status(500).json({ message: "Server Error" });
     }
 });
+
 
 app.post("/login", async (req, res) => {
     try {
