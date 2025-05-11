@@ -22,7 +22,7 @@ The **Hostel Cleaning Website** is a platform designed for students to book clea
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Authentication**: JWT-based authentication
-- **Deployment**: Hosted on a cloud platform (e.g., Vercel, Render, or AWS)
+- **Deployment**: Hosted on a cloud platform (Render)
 
 ## Installation
 ### Prerequisites
