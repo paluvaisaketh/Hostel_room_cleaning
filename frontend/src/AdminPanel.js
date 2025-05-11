@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles/AdminPanel.css";
 
-const apiUrl = "http://localhost:5500";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const AdminPanel = () => {
   const [bookings, setBookings] = useState([]);
@@ -93,19 +93,20 @@ const AdminPanel = () => {
 
   return (
     <>
-      <div>
-        <nav className="navbar1">
-          <div className="logo1">Clean Up Crew</div>
-          <button className="btn1" onClick={handleLogout}>Logout</button>
-        </nav>
-      </div>
+      <nav className="navbar1">
+        <div className="logo1">Clean Up Crew</div>
+        <button className="btn1" onClick={handleLogout}>Logout</button>
+      </nav>
+
       <div className="admin-booking-container">
         <button className="add-user-btn" onClick={() => navigate("/admin-add-user")}>
           Add User
         </button>
         <h2 className="booking-title">All Bookings</h2>
+
         {message && <p className="success-message">{message}</p>}
         {error && <p className="error-message">{error}</p>}
+
         <table className="booking-table">
           <thead>
             <tr>

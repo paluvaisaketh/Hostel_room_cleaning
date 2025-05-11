@@ -1,7 +1,8 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles/BookSlot.css";
-const apiUrl = "http://localhost:5500";
+
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const BookSlot = () => {
   const [ndate, setNdate] = useState("");
@@ -80,19 +81,20 @@ const BookSlot = () => {
 
   return (
     <>
-      <div>
-        <nav className="navbar1">
-          <div className="logo">Clean Up Crew</div>
-          <button onClick={() => navigate("/user-page")} className="btn">Back to Home</button>
-        </nav>
-      </div>
+      <nav className="navbar1">
+        <div className="logo">Clean Up Crew</div>
+        <button onClick={() => navigate("/user-page")} className="btn">
+          Back to Home
+        </button>
+      </nav>
+
       <div className="book-slot-container">
         <h1 className="page-title">Book a Slot</h1>
         {error && <p className="error-message">{error}</p>}
         {message && <p className="success-message">{message}</p>}
         <form onSubmit={handleSubmit} className="slot-form">
           <label className="form-label">
-            Select Date:   
+            Select Date:
             <input
               type="date"
               value={ndate}
@@ -137,7 +139,11 @@ const BookSlot = () => {
             </select>
           </label>
           <br />
-          <div className="rag"><button type="submit" className="submit-button">Book Slot</button></div>
+          <div className="rag">
+            <button type="submit" className="submit-button">
+              Book Slot
+            </button>
+          </div>
         </form>
       </div>
     </>

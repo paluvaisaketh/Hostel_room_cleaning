@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
 import "./styles/Login.css";
 
+const apiUrl = process.env.REACT_APP_API_URL;  // Use environment variable for the API URL
+
 const Login = () => {
   const [credentials, setCredentials] = useState({ regno: "", password: "" });
   const [errorMessage, setErrorMessage] = useState("");
@@ -11,7 +13,8 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5500/login", credentials);
+      // Use the environment variable for API URL
+      const res = await axios.post(`${apiUrl}/login`, credentials);
       localStorage.setItem("token", res.data.token);
       navigate("/user-page");
     } catch (err) {

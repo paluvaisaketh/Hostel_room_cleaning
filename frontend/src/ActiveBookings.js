@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles/ActiveBookings.css";
 
-const apiUrl = "http://localhost:5500";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const ActiveBookings = () => {
   const [bookings, setBookings] = useState([]);

@@ -3,6 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
 import "./styles/AdminLogin.css";
 
+// Use environment variable for backend URL
+const apiUrl = process.env.REACT_APP_API_URL;
+
 const AdminLogin = () => {
   const [credentials, setCredentials] = useState({ username: "", password: "" });
   const [message, setMessage] = useState("");
@@ -15,7 +18,7 @@ const AdminLogin = () => {
     setError("");
 
     try {
-      const res = await axios.post("http://localhost:5500/admin-login", credentials);
+      const res = await axios.post(`${apiUrl}/admin-login`, credentials);
       localStorage.setItem("adminToken", res.data.token);
       setMessage("Login successful! Redirecting...");
       setTimeout(() => navigate("/admin-panel"), 1500);
@@ -36,6 +39,7 @@ const AdminLogin = () => {
         <div className="logo">Clean Up Crew</div>
         <div><button className="btn"><Link to="/">Home</Link></button></div>
       </nav>
+
       <div className="mainco1">
         <div className="login-container1">
           <div className="left-container1"></div>
@@ -47,15 +51,19 @@ const AdminLogin = () => {
               <label htmlFor="username" className="usernamelabel">Username:</label>
               <input
                 type="text"
+                value={credentials.username}
                 onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
                 required
               />
+
               <label htmlFor="password" className="passwordlabel">Password:</label>
               <input
                 type="password"
+                value={credentials.password}
                 onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
                 required
               />
+
               <div className="ll">
                 <button type="submit">Login</button>
               </div>

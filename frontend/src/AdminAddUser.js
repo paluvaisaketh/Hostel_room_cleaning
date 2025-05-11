@@ -11,20 +11,22 @@ const AdminAddUser = () => {
     roomtype: "",
     email: "",
   });
-  
+
   const [message, setMessage] = useState(null);
   const [error, setError] = useState(null);
-  
+
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage(null);
     setError(null);
-    
+
     try {
-      const res = await axios.post("http://localhost:5500/admin/admin-add-user", formData);
-      setMessage(res.data.message);
+      // Send POST request to backend API
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/admin/admin-add-user`, formData);
+      setMessage(res.data.message); // Display success message
     } catch (err) {
-      setError(err.response?.data?.message || "An error occurred");
+      setError(err.response?.data?.message || "An error occurred"); // Display error message
     }
   };
 
@@ -34,6 +36,8 @@ const AdminAddUser = () => {
         <h1>Add User</h1>
         {message && <p className="success-message">{message}</p>}
         {error && <p className="error-message">{error}</p>}
+        
+        {/* Render input fields for the form */}
         {Object.keys(formData).map((key) => (
           <div key={key} className="input-group">
             <label>{key.toUpperCase()}:</label>
@@ -44,6 +48,7 @@ const AdminAddUser = () => {
             />
           </div>
         ))}
+        
         <button type="submit">Add User</button>
       </form>
     </div>
