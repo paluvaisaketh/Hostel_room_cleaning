@@ -13,7 +13,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static("public")); 
 const mongoURL   = process.env.mongoURL;
-
 mongoose.connect(mongoURL+"/HostelCleaning", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
